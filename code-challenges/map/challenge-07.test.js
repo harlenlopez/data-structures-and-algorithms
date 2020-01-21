@@ -11,7 +11,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(Math.pow(2, i));
+    return result;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,7 +25,9 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  let result = [];
+  arr.forEach(num => result.push(Math.pow(2, num)));
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +37,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  return arr.map(num => Math.pow(2, num));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +51,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map(potato => potato.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +65,12 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let result = arr.map(item =>{
+    if(typeof item !== 'number'){return 'N/A'}
+    else if(item % 2 == 0){return 'even'}
+    else{return 'odd'}
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +116,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let result = arr.map(value => value.ability.name);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +164,10 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map(stats => {
+    let moves = stats['stat, move'];
+    return moves;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
