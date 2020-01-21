@@ -9,7 +9,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  return arr.filter(num => num % 2 !==0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +24,11 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let result = arr.filter(value => {
+    if(value.match(/[aeiou]/)){return true}
+    return false;
+  });
+  return result
 };
 
 
@@ -35,9 +39,11 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
-
+//not quite sure on this one, its something easy im sure but im not seeing it.
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(function(value) {
+    return this.index(value) < 0;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +86,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(stats => stats.baseStat > minBaseStat ? stats : null);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +98,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let result = [];
+  arr.filter(value => {
+    if (minBaseStat < value.baseStat){
+      result.push(value.stat.name)
+    }
+    return false;
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +158,13 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  let result = arr.filter(value => {
+    if (!Object.keys(value).includes('children')){
+      return true
+    }
+    return false;
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
