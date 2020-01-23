@@ -57,14 +57,14 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  if (num % 3 === 2);{
+  if (num % 3 === 2); {
     arr.pop();
   }
 };
 
 const removeElements = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
-    callback(i, arr);
+    callback(arr[i], arr);
   }
   return arr;
 };
@@ -76,8 +76,12 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  arr.forEach(num => {
+    callback(num, arr);
+  });
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -90,7 +94,12 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach((element, index, arr) => {
+    if (element % 3 === 2) {
+      arr.pop(index);
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +120,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let list = [];
+  availableItems.forEach(item => {
+    if (item.available === true) {
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,9 +143,11 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-const fizzbuzz = (arr) => {
-  // Solution code here...
-};
+// const fizzbuzz = (arr) => {
+//   arr.forEach((value, index) => {
+//     if(value % 3 === 0 )
+//   })
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
