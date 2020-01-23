@@ -12,7 +12,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let count = 0;
+  input.map(value => {
+    value.map(valueTwo => {
+      if(valueTwo === target){count++}
+    })
+  })
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +32,9 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let count = 0;
+  input.map(value => value.map(valueTwo => count += valueTwo));
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +50,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArray = [];
+  input.forEach(arr => {
+    let arrayTwo = arr.filter(num => {
+      if (typeof num === )
+    })
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +121,13 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  lat arr = [];
+  let res = '';
+  data.map(value => {
+    if (value.gender === 'male' || value.gender === 'female'){
+      arr.push(value.name);
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
