@@ -15,9 +15,9 @@ const count = (target, input) => {
   let count = 0;
   input.map(value => {
     value.map(valueTwo => {
-      if(valueTwo === target){count++}
-    })
-  })
+      if (valueTwo === target) { count++ }
+    });
+  });
   return count;
 };
 
@@ -47,15 +47,21 @@ This function should first remove any elements that are not numbers or are not d
 This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
 
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
------------------------------------------------------------------------------------------------- */
 
+//referenced roberts code to finish this challenge
+------------------------------------------------------------------------------------------------ */
 const divisibleByFiveTwoToThePower = (input) => {
   let newArray = [];
   input.forEach(arr => {
     let arrayTwo = arr.filter(num => {
-      if (typeof num === )
-    })
-  })
+      if (typeof num === 'number' && num % 5 === 0) {
+        return num;
+      }
+    });
+    let arrayThree = arrayTwo.map(num => Math.pow(2, num));
+    newArray.push(arrayThree);
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,15 +126,15 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  lat arr = [];
-  let res = '';
-  data.map(value => {
-    if (value.gender === 'male' || value.gender === 'female'){
-      arr.push(value.name);
-    }
-  })
-};
+// let findMaleAndFemale = (data) => {
+//   lat arr = [];
+//   let res = '';
+//   data.map(value => {
+//     if (value.gender === 'male' || value.gender === 'female'){
+//       arr.push(value.name);
+//     }
+//   })
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
