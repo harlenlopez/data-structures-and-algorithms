@@ -8,9 +8,7 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
-  // Solution code here...
-};
+const toTitleCase = (arr) => arr.map(val => val.charAt(0).toUpperCase() + val.slice(1));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -102,7 +100,16 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  if(property === 'name'){
+    return arr.sort(function(a,b){
+      let nameOne = a[property].toLowerCase(), nameTwo = b[property].toLowerCase();
+      if(nameOne < nameTwo) return -1;
+      if(nameOne > nameTwo) return 1;
+      return 0;
+    })
+  } else {
+    return arr.sort((a, b) => a[property] -b [property]);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +125,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  let regex = /^(https:\/\/)/;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
